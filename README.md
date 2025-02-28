@@ -1,74 +1,42 @@
-# Project Name
+# Solar System Explorer
 
-A modern web application built with React, TypeScript, and Vite that [brief description of what your app does].
+An interactive 3D visualization of our solar system built with React, Three.js, and TypeScript. Explore planets, learn about celestial bodies, and experience our cosmic neighborhood.
 
 ## Features
 
-- Feature 1: Brief description
-- Feature 2: Brief description
-- Feature 3: Brief description
+- **Interactive 3D Solar System**: Navigate through a visually stunning model of our solar system
+- **Detailed Planet Information**: Learn key facts about each celestial body
+- **Customizable Experience**: Toggle between realistic and simplified scales, adjust simulation speed
+
+## Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Visit `http://localhost:5173` to begin your cosmic journey.
 
 ## Tech Stack
 
-- **Frontend**: React, TypeScript, Vite
-- **Styling**: [Your styling solution, e.g., Tailwind CSS, CSS Modules]
-- **State Management**: [Your state management solution, e.g., Redux, Context API]
-- **Other Tools**: [Any other notable libraries or tools]
+- **Core**: React 19, TypeScript, Vite
+- **3D Rendering**: Three.js (@react-three/fiber, @react-three/drei)
+- **UI/Animation**: Framer Motion, Tailwind CSS
+- **State Management**: React Hooks
 
-## Getting Started
+## Commands
 
-### Prerequisites
-
-- Node.js (v16+)
-- npm or yarn
-
-### Installation
-
-```bash
-# Clone the repository
-git clone [your-repo-url]
-
-# Navigate to the project directory
-cd [project-directory]
-
-# Install dependencies
-npm install
-# or
-yarn
-```
-
-### Development
-
-```bash
-# Start the development server
-npm run dev
-# or
-yarn dev
-```
-
-Visit `http://localhost:5173` to view the application.
-
-### Build
-
-```bash
-# Build for production
-npm run build
-# or
-yarn build
-```
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
 
 ## Project Structure
 
-```
-src/
-├── assets/      # Static assets
-├── components/  # Reusable components
-├── pages/       # Page components
-├── hooks/       # Custom hooks
-├── utils/       # Utility functions
-└── App.tsx      # Main application component
-```
+The application follows a modular architecture with components for the solar system visualization, planet details, and interactive controls.
 
 ## License
 
-[Your License] - See the LICENSE file for details.
+MIT
