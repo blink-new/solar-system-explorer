@@ -1,0 +1,1 @@
+export type ViewType = 'system' | 'detail' | 'quiz';

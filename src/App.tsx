@@ -1,139 +1,136 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { useForm } from 'react-hook-form'
-import toast from 'react-hot-toast'
-import { LucideHeart, LucideGithub } from 'lucide-react'
-import clsx from 'clsx'
+import { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Toaster } from 'react-hot-toast';
+import { LucideGithub } from 'lucide-react';
+import './App.css';
 
-type FormData = {
-  name: string
-  email: string
-}
+// Import types
+import { CelestialBodyData } from './types/solarSystem';
 
 function App() {
-  const [count, setCount] = useState(0)
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
+  // App state
+  const [view, setView] = useState<'system' | 'detail' | 'quiz'>('system');
+  const [selectedPlanet, setSelectedPlanet] = useState<string | null>(null);
+  const [showOrbits, setShowOrbits] = useState(true);
+  const [isNightMode, setIsNightMode] = useState(true); // Default to night mode for better visuals
+  const [isRealisticScale, setIsRealisticScale] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedBody, setSelectedBody] = useState<CelestialBodyData | null>(null);
+  const [simulationSpeed, setSimulationSpeed] = useState(1);
+  const [isPaused, setIsPaused] = useState(false);
   
-  const onSubmit = (data: FormData) => {
-    console.log(data)
-    toast.success(`Hello, ${data.name}!`)
-  }
+  // Simulate loading time
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Handle selecting a celestial body
+  const handleSelectBody = (body: CelestialBodyData) => {
+    setSelectedBody(body);
+    setSelectedPlanet(body.id || body.name);
+    console.log('Selected body:', body.name);
+  };
+  
+  // Handle simulation speed change
+  const handleSpeedChange = (speed: number) => {
+    setSimulationSpeed(speed);
+    console.log('Simulation speed changed to:', speed);
+  };
+
+  // Handle pause/play simulation
+  const handlePauseToggle = () => {
+    setIsPaused(!isPaused);
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-100 flex flex-col items-center justify-center p-4">
-      <motion.div 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-md w-full bg-white rounded-xl shadow-lg p-8"
-      >
-        <header className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-primary-700">
-            Vite + React + TypeScript
-          </h1>
-          <motion.div 
-            className="mt-2 flex items-center justify-center gap-2 text-secondary-500"
-            whileHover={{ scale: 1.05 }}
-          >
-            <LucideHeart className="text-red-500" />
-            <span>Development Environment</span>
-          </motion.div>
-        </header>
-
-        <div className="mb-8">
-          <div className="flex items-center justify-center mb-4">
-            <button
-              className={clsx(
-                "px-4 py-2 rounded-md transition-all duration-200",
-                "bg-primary-600 hover:bg-primary-700 text-white",
-                "focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-              )}
-              onClick={() => {
-                setCount(count + 1)
-                toast.success(`Count increased to ${count + 1}!`)
-              }}
-            >
-              Count is {count}
-            </button>
-          </div>
-          <p className="text-sm text-center text-secondary-500">
-            Edit <code className="font-mono bg-secondary-100 p-1 rounded">src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
-
-        <form 
-          onSubmit={handleSubmit(onSubmit)}
-          className="space-y-4"
-        >
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-secondary-700">
-              Name
-            </label>
-            <input
-              id="name"
-              type="text"
-              className={clsx(
-                "mt-1 block w-full rounded-md border-secondary-300 shadow-sm",
-                "focus:border-primary-500 focus:ring-primary-500",
-                errors.name && "border-red-500"
-              )}
-              {...register("name", { required: "Name is required" })}
-            />
-            {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-            )}
-          </div>
-          
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-secondary-700">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              className={clsx(
-                "mt-1 block w-full rounded-md border-secondary-300 shadow-sm",
-                "focus:border-primary-500 focus:ring-primary-500",
-                errors.email && "border-red-500"
-              )}
-              {...register("email", { 
-                required: "Email is required",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address"
-                }
-              })}
-            />
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-            )}
-          </div>
-          
-          <button
-            type="submit"
-            className={clsx(
-              "w-full px-4 py-2 rounded-md transition-all duration-200",
-              "bg-primary-600 hover:bg-primary-700 text-white",
-              "focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-            )}
-          >
-            Submit
-          </button>
-        </form>
-      </motion.div>
+    <div className={`app-container min-h-screen ${isNightMode ? 'bg-black' : 'bg-indigo-950'}`}>
+      <Toaster position="top-center" />
       
-      <footer className="mt-8 text-secondary-500 flex items-center gap-2">
-        <LucideGithub />
-        <a 
-          href="https://github.com"
-          target="_blank"
-          rel="noreferrer"
-          className="hover:text-primary-600 transition-colors"
-        >
-          View on GitHub
-        </a>
-      </footer>
+      {isLoading ? (
+        <div className="w-full h-screen flex flex-col items-center justify-center bg-black">
+          <div className="w-24 h-24 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin mb-6"></div>
+          <h1 className="text-2xl font-bold text-white mb-2">Loading Solar System</h1>
+          <p className="text-gray-300">Preparing for your cosmic journey...</p>
+        </div>
+      ) : (
+        <>
+          <nav className={`w-full h-16 ${isNightMode ? 'bg-gray-800 text-white' : 'bg-indigo-900 text-white'} px-4 flex items-center justify-between shadow-lg z-10`}>
+            <div className="flex items-center">
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="mr-2 text-yellow-400"
+              >
+                <span className="text-2xl">☀️</span>
+              </motion.div>
+              <h1 className="text-xl font-bold">Solar System Explorer</h1>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              <button 
+                onClick={() => setIsNightMode(!isNightMode)}
+                className="p-2 rounded-full hover:bg-indigo-800 transition-colors"
+              >
+                {isNightMode ? 'Light Mode' : 'Dark Mode'}
+              </button>
+            </div>
+          </nav>
+          
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key="system"
+              className="w-full h-[calc(100vh-64px)]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex flex-col items-center justify-center h-full">
+                <h1 className="text-4xl font-bold text-white mb-4">Solar System Explorer</h1>
+                <p className="text-xl text-gray-300 mb-8">Explore our cosmic neighborhood</p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                  {['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'].map((planet) => (
+                    <motion.div
+                      key={planet}
+                      className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className="h-40 bg-indigo-900 flex items-center justify-center">
+                        <div className={`w-20 h-20 rounded-full bg-${planet.toLowerCase()}`}></div>
+                      </div>
+                      <div className="p-4">
+                        <h2 className="text-xl font-bold text-white">{planet}</h2>
+                        <p className="text-gray-400 mt-2">Click to explore {planet}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Footer */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="absolute bottom-4 left-4 z-10 text-gray-400 flex items-center gap-2"
+              >
+                <LucideGithub size={16} />
+                <span className="text-sm">
+                  Solar System Explorer v1.0
+                </span>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </>
+      )}
     </div>
-  )
+  );
 }
 
-export default App 
+export default App;
