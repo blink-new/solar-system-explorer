@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Solar System Explorer 🪐
 
 An interactive 3D visualization of our solar system built with React, Three.js, and TypeScript.
@@ -37,9 +38,15 @@ An interactive 3D visualization of our solar system built with React, Three.js, 
 ## 🌌 Overview
 
 Solar System Explorer is an educational and interactive web application that allows users to explore our solar system in a visually stunning 3D environment. The application provides detailed information about each planet, their moons, and other celestial bodies, making astronomy accessible and engaging for users of all ages.
+=======
+# 🪐 Solar System Explorer
 
-## 🚀 Features
+An interactive web application that allows users to explore and learn about our solar system in a visually engaging way.
+>>>>>>> Stashed changes
 
+![Solar System Explorer](https://images.unsplash.com/photo-1614732414444-096e5f1122d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80)
+
+<<<<<<< Updated upstream
 - **Interactive 3D Model**: Navigate through a visually stunning solar system
 - **Planet Information**: View key facts about each celestial body
 - **Customizable View Options**:
@@ -67,10 +74,24 @@ Solar System Explorer is an educational and interactive web application that all
 ## 🚦 Getting Started
 
 ### 📋 Prerequisites
+=======
+## ✨ Features
+
+- **Interactive 3D Solar System** - Explore planets and celestial bodies in a realistic 3D environment
+- **Detailed Information** - Learn about each planet's characteristics, atmosphere, and interesting facts
+- **Visual Customization** - Toggle between night/light modes for different viewing experiences
+- **Simulation Controls** - Adjust simulation speed and pause/play functionality
+- **Responsive Design** - Works seamlessly across desktop and mobile devices
+
+## 🚀 Getting Started
+
+### Prerequisites
+>>>>>>> Stashed changes
 
 - Node.js (v18 or higher)
 - npm or yarn
 
+<<<<<<< Updated upstream
 ### 🔧 Installation
 
 1. Clone the repository:
@@ -154,12 +175,42 @@ yarn build
 The build artifacts will be stored in the `dist/` directory, ready to be deployed to any static hosting service.
 
 ### Deployment Options
+=======
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/solar-system-explorer.git
+
+# Navigate to the project directory
+cd solar-system-explorer
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The application will be available at `http://localhost:5173/`
+
+## 🛠️ Built With
+
+- **React 19** - Latest React version with improved rendering and hooks
+- **TypeScript** - Type safety and enhanced developer experience
+- **Vite** - Lightning-fast build tool with HMR (Hot Module Replacement)
+- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
+- **Framer Motion** - Advanced animations and transitions
+- **React Three Fiber** - 3D graphics capabilities with Three.js
+- **Drei** - Useful helpers for React Three Fiber
+>>>>>>> Stashed changes
 
 - **Vercel**: Recommended for easy deployment with GitHub integration
 - **Netlify**: Great for automatic deployments from Git
 - **GitHub Pages**: Simple hosting for static sites
 - **AWS S3/CloudFront**: For scalable, production deployments
 
+<<<<<<< Updated upstream
 ## ⚡ Performance Optimization
 
 The application implements several performance optimizations:
@@ -181,6 +232,103 @@ The application implements several performance optimizations:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+=======
+```
+/
+├── public/             # Static assets
+├── src/                # Source code
+│   ├── assets/         # Images, fonts, etc.
+│   ├── lib/            # Utility functions and helpers
+│   ├── types/          # TypeScript type definitions
+│   │   └── solarSystem.ts  # Solar system data types
+│   ├── App.tsx         # Main application component
+│   ├── main.tsx        # Application entry point
+│   └── index.css       # Global styles
+├── index.html          # HTML entry point
+├── tsconfig.json       # TypeScript configuration
+├── vite.config.ts      # Vite configuration
+└── tailwind.config.cjs # Tailwind CSS configuration
+```
+
+## 🌟 Key Features Explained
+
+### Interactive Solar System Visualization
+
+The application provides a realistic 3D representation of our solar system, allowing users to:
+- View planets in their orbits around the sun
+- Toggle orbit visibility
+- Switch between realistic and simplified scale modes
+
+### Detailed Celestial Body Information
+
+Each celestial body in the solar system comes with:
+- Physical characteristics (diameter, mass, gravity)
+- Orbital information (distance from sun, orbital period)
+- Atmospheric composition
+- Temperature data
+- Interesting facts and descriptions
+
+### Customization Options
+
+Users can personalize their experience with:
+- Night/Light mode toggle
+- Simulation speed controls
+- Realistic/Simplified scale toggle
+
+## 🧩 Data Model
+
+The application uses a comprehensive data model for celestial bodies:
+
+```typescript
+interface CelestialBodyData {
+  id: string;
+  name: string;
+  type: 'star' | 'planet' | 'dwarf-planet' | 'moon' | 'asteroid' | 'comet';
+  diameter: number; // in km
+  mass?: number; // in kg
+  gravity?: number; // in m/s²
+  distanceFromSun?: number; // in million km
+  orbitalPeriod?: number; // in Earth days
+  rotationPeriod?: number; // in Earth hours
+  temperature?: number; // in °C
+  atmosphere?: string[];
+  moons?: number;
+  rings?: boolean;
+  color: string;
+  texture?: string;
+  description: string;
+  funFacts?: string[];
+  position: number; // position in the solar system
+}
+```
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build the project for production
+- `npm run lint` - Run ESLint to check code quality
+- `npm run preview` - Preview the production build locally
+
+## 📱 Responsive Design
+
+The application is fully responsive and works on:
+- Desktop computers
+- Tablets
+- Mobile phones
+
+## 🌐 Browser Support
+
+This project supports all modern browsers, including:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+>>>>>>> Stashed changes
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
@@ -189,6 +337,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
+<<<<<<< Updated upstream
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgements
@@ -204,3 +353,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <div align="center">
   <sub>Built with ❤️ by space enthusiasts</sub>
 </div>
+=======
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgements
+
+- NASA for planetary data and inspiration
+- [Unsplash](https://unsplash.com) for space imagery
+- Three.js community for 3D rendering capabilities
+- React and Vite teams for the excellent development experience
+>>>>>>> Stashed changes
