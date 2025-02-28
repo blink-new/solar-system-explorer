@@ -1,41 +1,33 @@
 # Solar System Explorer
 
-An interactive 3D visualization of our solar system built with React, Three.js, and TypeScript. Explore planets, learn about celestial bodies, and experience our cosmic neighborhood.
+Interactive 3D visualization of our solar system built with React, Three.js, and TypeScript.
 
 ## Features
 
-- **Interactive 3D Solar System**: Navigate through a visually stunning model of our solar system
-- **Detailed Planet Information**: Learn key facts about each celestial body
-- **Customizable Experience**: Toggle between realistic and simplified scales, adjust simulation speed
+- **Interactive 3D Model**: Navigate through a visually stunning solar system
+- **Planet Information**: View key facts about each celestial body
+- **Customizable View**: Toggle scales and adjust simulation speed
 
 ## Quick Start
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
-Visit `http://localhost:5173` to begin your cosmic journey.
+Visit `http://localhost:5173`
 
 ## Tech Stack
 
-- **Core**: React 19, TypeScript, Vite
-- **3D Rendering**: Three.js (@react-three/fiber, @react-three/drei)
-- **UI/Animation**: Framer Motion, Tailwind CSS
-- **State Management**: React Hooks
+- React 19, TypeScript, Vite
+- Three.js (@react-three/fiber, @react-three/drei)
+- Framer Motion, Tailwind CSS
 
 ## Commands
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-
-## Project Structure
-
-The application follows a modular architecture with components for the solar system visualization, planet details, and interactive controls.
+- `npm run dev` - Development server
+- `npm run build` - Production build
+- `npm run preview` - Preview build
 
 ## License
 
