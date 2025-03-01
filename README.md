@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # Solar System Explorer 🪐
 
 An interactive 3D visualization of our solar system built with React, Three.js, and TypeScript.
@@ -183,15 +184,68 @@ The build artifacts will be stored in the `dist/` directory, ready to be deploye
 git clone https://github.com/yourusername/solar-system-explorer.git
 
 # Navigate to the project directory
+=======
+# Solar System Explorer
+
+An interactive, educational web application that allows users to explore and learn about our solar system through beautiful visualizations and detailed information.
+
+![Solar System Explorer](https://images.unsplash.com/photo-1614732414444-096e5f1122d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80)
+
+## 🚀 Features
+
+- **Interactive 3D Solar System**: Explore planets and celestial bodies in an interactive 3D environment
+- **Detailed Information**: Access comprehensive data about each celestial body
+- **Simulation Controls**: Adjust simulation speed, pause/play, and toggle realistic scaling
+- **Visual Customization**: Switch between night and light modes for optimal viewing
+- **Responsive Design**: Fully functional across desktop and mobile devices
+- **Smooth Animations**: Engaging transitions and animations powered by Framer Motion
+
+## 🛠️ Technology Stack
+
+### Core Technologies
+- **Frontend Framework**: React 19 with TypeScript
+- **Build Tool**: Vite for fast development and optimized production builds
+- **Styling**: Tailwind CSS with custom theming
+
+### UI Components & Visualization
+- **Component Library**: Radix UI (Dialog, Dropdown Menu, Tabs)
+- **Animation**: Framer Motion for fluid transitions and interactions
+- **Icons**: Lucide React
+- **3D Rendering**: React Three Fiber & Drei for WebGL-based 3D visualizations
+- **Charts**: Recharts for data visualization
+
+### State Management & Data Handling
+- **Form Management**: React Hook Form
+- **Validation**: Zod for type-safe schema validation
+- **Notifications**: React Hot Toast
+- **Drag and Drop**: DND Kit
+
+## 🏁 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/solar-system-explorer.git
+>>>>>>> Stashed changes
 cd solar-system-explorer
 
 # Install dependencies
 npm install
+# or
+yarn install
 
 # Start the development server
 npm run dev
+# or
+yarn dev
 ```
 
+<<<<<<< Updated upstream
 The application will be available at `http://localhost:5173/`
 
 ## 🛠️ Built With
@@ -203,6 +257,20 @@ The application will be available at `http://localhost:5173/`
 - **Framer Motion** - Advanced animations and transitions
 - **React Three Fiber** - 3D graphics capabilities with Three.js
 - **Drei** - Useful helpers for React Three Fiber
+>>>>>>> Stashed changes
+=======
+The application will be available at `http://localhost:5173` by default.
+
+## 📋 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with hot-reload |
+| `npm run build` | Create optimized production build |
+| `npm run lint` | Run ESLint to check for code issues |
+| `npm run preview` | Preview the production build locally |
+
+## 📁 Project Structure
 >>>>>>> Stashed changes
 
 - **Vercel**: Recommended for easy deployment with GitHub integration
@@ -235,6 +303,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 =======
 ```
 /
+<<<<<<< Updated upstream
 ├── public/             # Static assets
 ├── src/                # Source code
 │   ├── assets/         # Images, fonts, etc.
@@ -323,11 +392,68 @@ This project supports all modern browsers, including:
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
+=======
+├── public/                # Static assets and favicon
+├── src/                   # Source code
+│   ├── assets/            # Images, textures, and other static files
+│   ├── components/        # Reusable UI components
+│   │   ├── ui/            # Basic UI components
+│   │   └── planets/       # Planet-specific components
+│   ├── hooks/             # Custom React hooks
+│   ├── lib/               # Utility functions and helpers
+│   ├── types/             # TypeScript type definitions
+│   │   └── solarSystem.ts # Solar system data types
+│   ├── App.tsx            # Main application component
+│   ├── main.tsx           # Application entry point
+│   └── index.css          # Global styles and Tailwind imports
+├── .eslintrc.js           # ESLint configuration
+├── tailwind.config.js     # Tailwind CSS configuration
+├── tsconfig.json          # TypeScript configuration
+└── vite.config.ts         # Vite configuration
+```
+
+## 🌐 Browser Support
+
+The application is optimized for modern browsers:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 🧩 Key Features Explained
+
+### Solar System Visualization
+
+The 3D solar system visualization allows users to:
+- View planets orbiting the sun with accurate relative positions
+- Toggle between realistic and simplified scaling
+- Adjust simulation speed or pause the animation
+- Show or hide orbital paths
+
+### Planet Details
+
+When selecting a planet, users can access:
+- Physical characteristics (diameter, mass, gravity)
+- Orbital information (distance from sun, orbital period)
+- Atmospheric composition
+- Surface temperature
+- Fun facts and educational information
+
+### Interactive Controls
+
+The application provides various controls:
+- Camera controls to zoom, pan, and rotate the view
+- Time controls to speed up, slow down, or pause the simulation
+- Display controls to toggle visual elements
+>>>>>>> Stashed changes
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -337,6 +463,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -354,12 +481,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <sub>Built with ❤️ by space enthusiasts</sub>
 </div>
 =======
+=======
+>>>>>>> Stashed changes
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🙏 Acknowledgements
 
+<<<<<<< Updated upstream
 - NASA for planetary data and inspiration
 - [Unsplash](https://unsplash.com) for space imagery
 - Three.js community for 3D rendering capabilities
 - React and Vite teams for the excellent development experience
+>>>>>>> Stashed changes
+=======
+- Planet textures courtesy of NASA
+- 3D models and astronomical data from [Solar System Scope](https://www.solarsystemscope.com/)
+- Icons from [Lucide Icons](https://lucide.dev/)
 >>>>>>> Stashed changes
