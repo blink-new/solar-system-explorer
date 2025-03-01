@@ -1,0 +1,17 @@
+[user]
+	name = ShadowWalker2014
+	email = kai.jiabo.feng@gmail.com
+[safe]
+	directory = /home/user
+<<<<<<< Updated upstream
+=======
+	directory = /home/user
+	directory = /home/user
+	directory = /home/user
+	directory = /home/user
+	directory = /home/user
+	directory = /home/user
+	directory = /home/user
+	directory = /home/user
+	directory = /home/user
+>>>>>>> Stashed changes
